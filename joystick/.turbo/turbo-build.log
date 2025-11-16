@@ -1,0 +1,47 @@
+
+[43m[30m WARN [39m[49m Unsupported engine: wanted: {"node":"18.x"} (current: {"node":"v23.11.0","pnpm":"8.15.6"})
+
+> joystick@0.1.0 build /Users/erickpatrickbarcelos/codes/portifolio/apps/joystick
+> webpack --config webpack.config.cjs --mode production
+
+assets by status 277 bytes [1m[32m[cached][39m[22m 4 assets
+assets by status 1.46 MiB [1m[33m[compared for emit][39m[22m
+  assets by path [1m[32msrc/assets/[39m[22m 1.46 MiB
+    assets by status [1m[33m1.08 MiB[39m[22m [1m[33m[big][39m[22m 2 assets
+    asset [1m[32msrc/assets/Cyberpunk-Multiplayer.png.webp[39m[22m 230 KiB [1m[33m[compared for emit][39m[22m [from: src/assets/Cyberpunk-Multiplayer.png.webp] (auxiliary name: main)
+    asset [1m[32msrc/assets/perfil.jpg[39m[22m 147 KiB [1m[33m[compared for emit][39m[22m [from: src/assets/perfil.jpg] (auxiliary name: main)
+    asset [1m[32msrc/assets/controle-de-video-game.png[39m[22m 16.5 KiB [1m[33m[compared for emit][39m[22m [from: src/assets/controle-de-video-game.png] (auxiliary name: main)
+  assets by status 3.56 KiB [1m[32m[emitted][39m[22m
+    asset [1m[32mremoteEntry.js[39m[22m 3.25 KiB [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m [1m[32m[minimized][39m[22m (name: joystick)
+    asset [1m[32mindex.html[39m[22m 317 bytes [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m
+assets by info 664 KiB [1m[32m[immutable][39m[22m
+  asset [1m[33mmain.997cff35d4a4634e2ccc.js[39m[22m [1m[33m328 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
+  asset [1m[33m44.fbf66a3da4e31eccf6c2.js[39m[22m [1m[33m298 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (id hint: vendors) 1 related asset
+  asset [1m[32m898.a92788ea8ae730960447.js[39m[22m 38.6 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+orphan modules 570 KiB (javascript) 1010 bytes (runtime) [1m[33m[orphan][39m[22m 281 modules
+runtime modules 9.88 KiB 22 modules
+built modules 16.9 MiB (javascript) 277 bytes (asset) [1m[33m[built][39m[22m
+  modules by path [1m../../node_modules/.pnpm/[39m[22m 8.51 MiB 122 modules
+  modules by path [1m./src/[39m[22m 8.4 MiB (javascript) 277 bytes (asset)
+    javascript modules 8.4 MiB 27 modules
+    asset modules 277 bytes (asset) 168 bytes (javascript)
+      modules by path [1m./src/assets/*.jpg[39m[22m 132 bytes (asset) 84 bytes (javascript) 2 modules
+      [1m./src/assets/controle-de-video-game.png[39m[22m 81 bytes (asset) 42 bytes (javascript) [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      [1m./src/assets/jogo.jpeg[39m[22m 64 bytes (asset) 42 bytes (javascript) [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mcontainer entry[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  src/assets/lastofus.jpg (556 KiB)
+  src/assets/jogo.jpeg (546 KiB)
+  main.997cff35d4a4634e2ccc.js (328 KiB)
+  44.fbf66a3da4e31eccf6c2.js (298 KiB)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (328 KiB)
+      main.997cff35d4a4634e2ccc.js
+[39m[22m
+
+webpack 5.100.2 compiled with [1m[33m2 warnings[39m[22m in 8739 ms

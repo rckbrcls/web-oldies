@@ -1,0 +1,41 @@
+
+[43m[30m WARN [39m[49m Unsupported engine: wanted: {"node":"18.12.0"} (current: {"node":"v23.11.0","pnpm":"8.15.6"})
+
+> video-project-manage@0.1.0 build /Users/erickpatrickbarcelos/codes/portifolio/apps/video-project-manage
+> webpack --config webpack.config.cjs --mode production
+
+assets by status 71.4 KiB [1m[32m[cached][39m[22m 2 assets
+assets by path [1m[32m*.js[39m[22m 1020 KiB
+  assets by status [1m[33m985 KiB[39m[22m [1m[33m[big][39m[22m
+    asset [1m[33mmain.3477707b625cef196cbb.js[39m[22m [1m[33m501 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 1 related asset
+    asset [1m[33m694.fda7d9c3f31547d0d727.js[39m[22m [1m[33m484 KiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (id hint: vendors) 1 related asset
+  asset [1m[32m457.41fee6b3b147c8a3b926.js[39m[22m 26.6 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+  asset [1m[32mremoteEntry.js[39m[22m 3.37 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: video_manager)
+asset [1m[32mindex.html[39m[22m 322 bytes [1m[32m[emitted][39m[22m [1m[33m[compared for emit][39m[22m
+runtime modules 10.2 KiB 24 modules
+orphan modules 26.9 KiB [1m[33m[orphan][39m[22m 5 modules
+modules by path [1m../../node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/*.js[39m[22m 159 KiB 214 modules
+modules by path [1m../../node_modules/.pnpm/axios@1.10.0/node_modules/axios/lib/[39m[22m 100 KiB 49 modules
+modules by path [1m./src/[39m[22m 3.08 MiB (javascript) 71.4 KiB (asset) 30 modules
+modules by path [1m../../node_modules/.pnpm/stylis@4.3.2/node_modules/stylis/src/*.js[39m[22m 24.3 KiB 7 modules
+modules by path [1m../../node_modules/.pnpm/react-icons@5.5.0_react@18.3.1/node_module...(truncated)[39m[22m 2.01 MiB 6 modules
+modules by path [1m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/[39m[22m 131 KiB 3 modules
+modules by path [1m../../node_modules/.pnpm/react@18.3.1/node_modules/react/[39m[22m 6.95 KiB 2 modules
+modules by path [1m../../node_modules/.pnpm/use-sync-external-store@1.5.0_react@18.3.1/node_modules...(truncated)[39m[22m 2.81 KiB 2 modules
+modules by path [1m../../node_modules/.pnpm/@miragejs+pretender-node-polyfill@0.1.2/node_modules/@m...(truncated)[39m[22m 272 bytes 2 modules
+modules by path [1m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/[39m[22m 4.33 KiB 2 modules
++ 18 modules
+
+[1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  main.3477707b625cef196cbb.js (501 KiB)
+  694.fda7d9c3f31547d0d727.js (484 KiB)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (501 KiB)
+      main.3477707b625cef196cbb.js
+[39m[22m
+
+webpack 5.100.2 compiled with [1m[33m2 warnings[39m[22m in 20062 ms

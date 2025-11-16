@@ -1,0 +1,35 @@
+
+
+> electoral-system@0.0.0 build /Users/erickpatrickbarcelos/codes/portifolio/apps/electoral-system
+> webpack --config webpack.config.cjs --mode production
+
+
+🌼   [35mdaisyUI[39m [2m4.12.24[22m
+├─ [32m✔︎[39m 2 themes added[2m		https://daisyui.com/docs/themes[22m
+╰─ [32m★[39m [0mStar daisyUI on GitHub[0m	[2mhttps://github.com/saadeghi/daisyui[22m
+
+assets by status 61.4 KiB [1m[33m[compared for emit][39m[22m
+  assets by path [1m[32m*.js[39m[22m 14.6 KiB
+    asset [1m[32m842.bundle.js[39m[22m 12.1 KiB [1m[33m[compared for emit][39m[22m [1m[32m[minimized][39m[22m (id hint: vendors)
+    asset [1m[32mremoteEntry.js[39m[22m 2.52 KiB [1m[33m[compared for emit][39m[22m [1m[32m[minimized][39m[22m (name: electoral_system)
+  asset [1m[32mmain.css[39m[22m 46.4 KiB [1m[33m[compared for emit][39m[22m (name: main)
+  asset [1m[32mindex.html[39m[22m 389 bytes [1m[33m[compared for emit][39m[22m
+assets by status 75.8 KiB [1m[32m[emitted][39m[22m
+  asset [1m[32mbundle.js[39m[22m 43.2 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: main) 1 related asset
+  asset [1m[32m572.bundle.js[39m[22m 32.6 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m 1 related asset
+Entrypoint [1mmain[39m[22m 89.6 KiB = [1m[32mmain.css[39m[22m 46.4 KiB [1m[32mbundle.js[39m[22m 43.2 KiB
+Entrypoint [1melectoral_system[39m[22m 2.52 KiB = [1m[32mremoteEntry.js[39m[22m
+runtime modules 6.72 KiB 14 modules
+orphan modules 49.3 KiB [1m[33m[orphan][39m[22m 4 modules
+built modules 303 KiB (javascript) 46.4 KiB (css/mini-extract) [1m[33m[built][39m[22m
+  modules by path [1m./src/[39m[22m 225 KiB (javascript) 46.4 KiB (css/mini-extract)
+    modules by path [1m./src/*.tsx[39m[22m 216 KiB
+      [1m./src/index.tsx + 4 modules[39m[22m 152 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      [1m./src/App.tsx[39m[22m 64.1 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    css ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.100.2/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.5.6_typescript@5.8.3_webpack@5.100.2/node_modules/postcss-loader/dist/cjs.js![1m./src/index.css[39m[22m 46.4 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m./src/components/Header.tsx[39m[22m 9.27 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  modules by path [1m../../node_modules/.pnpm/solid-js@1.9.7/node_modules/solid-js/[39m[22m 77.9 KiB
+    [1m../../node_modules/.pnpm/solid-js@1.9.7/node_modules/solid-js/web/dist/web.js[39m[22m 28 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    [1m../../node_modules/.pnpm/solid-js@1.9.7/node_modules/solid-js/dist/solid.js[39m[22m 50 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mcontainer entry[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+webpack 5.100.2 compiled [1m[32msuccessfully[39m[22m in 2278 ms
