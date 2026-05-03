@@ -1,34 +1,64 @@
 # Video Project Manager
 
 > **Status:** Archived
-> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+> React frontend kept inside the historical `web-oldies` archive.
 
-## How to Run the Project
+## Summary
 
-### Step 1: Change Node.js Version
+- Archived React frontend experiment for managing clients and video projects.
+- Solves CRUD-style pages for clients and videos with login, mock server behavior, routes, reusable forms, and Redux state.
+- Main stack: React 18, React Router 6, Redux Toolkit, MirageJS, Axios, styled-components, Webpack, and remaining react-scripts dependencies.
+- Current status: archived.
+- Technical value: captures an early CRUD frontend with route-level pages, MirageJS mocks, and shared service code.
 
-Make sure you are using the correct version of Node.js. You can manage Node.js versions using a version manager like NVM (Node Version Manager). Follow the instructions to install and use the required Node.js version for this project.
+Frontend experiment for managing clients and video projects.
 
-### Step 2: Install Dependencies
+## Features
 
-Before running the project, install all the necessary dependencies. Use the following command:
+- Login page.
+- Home page.
+- Client registration, listing, and editing pages.
+- Video registration and editing pages.
+- Not-found page.
+- Redux store.
+- MirageJS mock server.
+- API service wrapper.
 
-#### `npm install`
+## Tech Stack
 
-### Step 3: Run the Mock Server (json-server)
+- React 18
+- React Router 6
+- Redux Toolkit
+- MirageJS
+- Axios
+- styled-components
+- Webpack
+- react-scripts dependencies remain in the archived package.
 
-To start the mock server, use the following command:
+## Usage
 
-#### `npm run server`
+Scripts from `package.json`:
 
-This will initiate the json-server that simulates API calls.
+- `npm run dev`
+- `npm run build`
+- `npm test`
+- `npm run eject`
 
-### Step 4: Run the Front-end
+## Project Structure
 
-To start the front-end of the application, use the following command in another terminal:
+```text
+frontend/video-project-manage/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── mirage/
+│   ├── pages/
+│   ├── routes.js
+│   └── services/
+├── webpack.config.cjs
+└── package.json
+```
 
-#### `npm run start`
+## Lessons Learned
 
-This will start the front-end application, and you can access it in your browser.
-
-Make sure all dependencies are installed before running the above commands.
+This archived app captures an early CRUD-style frontend with mock data, route-level pages, reusable forms, and Redux state.

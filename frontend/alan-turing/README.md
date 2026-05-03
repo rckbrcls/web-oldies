@@ -1,33 +1,58 @@
 # Alan Turing
 
 > **Status:** Archived
-> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+> SolidJS educational frontend kept inside the historical `web-oldies` archive.
+
+## Summary
+
+- Archived SolidJS educational site about Alan Turing and computing-history topics.
+- Solves a static learning experience with profile data, timeline, concepts, applications, resources, legacy sections, and an embedded Google Form.
+- Main stack: SolidJS, TypeScript, Tailwind CSS, Webpack, and Vite dependencies.
+- Current status: archived; active scripts use Webpack.
+- Technical value: preserves an early componentized educational frontend with data-driven sections.
+
+Single-page educational site about Alan Turing and related computing-history topics.
+
+## Features
+
+- Introduction section.
+- Profile sections driven by `src/data/profiles.ts`.
+- Timeline, concepts, applications, educational resources, and legacy sections.
+- Header and scroll button for navigation.
+- Embedded Google Forms iframe.
+
+## Tech Stack
+
+- SolidJS
+- TypeScript
+- Tailwind CSS
+- Webpack
+- Vite dependencies are present, but the active scripts use Webpack.
 
 ## Usage
 
-```bash
-$ npm install # or pnpm install or yarn install
+Scripts from `package.json`:
+
+- `npm run start`
+- `npm run dev`
+- `npm run build`
+- `npm run serve`
+
+## Project Structure
+
+```text
+frontend/alan-turing/
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── App.tsx
+│   └── index.tsx
+├── webpack.config.cjs
+├── vite.config.ts
+└── package.json
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Technical Highlights
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+- Content is componentized by educational section.
+- The Google Forms integration is embedded directly in `App.tsx`.

@@ -3,9 +3,18 @@
 > **Status:** Archived
 > This configuration is kept as part of the historical `web-oldies` archive and may need verification before reuse.
 
+## Summary
+
+- Archived Cloudflare Tunnel configuration notes for exposing local monorepo services.
+- Solves historical local-to-internet routing for API containers without exposing databases directly.
+- Main stack: Cloudflare Tunnel, Docker Compose service names, and `cloudflared` credentials/config files.
+- Current status: archived and domain placeholders must be replaced before any reuse.
+- Technical value: documents a tunnel pattern while explicitly keeping databases internal.
+
 This folder contains Cloudflare Tunnel configuration to expose your local Docker services securely on the Internet without exposing databases.
 
 ## Overview
+
 - A named tunnel will proxy these hostnames to local services:
   - electoral-api.seudominio.com -> `electoral-system-api:5000`
   - joystick-api.seudominio.com -> `joystick-api:3000`
@@ -13,17 +22,28 @@ This folder contains Cloudflare Tunnel configuration to expose your local Docker
   - secret-santa-api.seudominio.com -> `secret-santa-api:3000`
 - Databases are not exposed. They remain internal to Docker or bound to 127.0.0.1.
 
-## Prerequisites
+## Getting Started
+
+### Requirements
+
 - You have a Cloudflare account, a zone (domain) added, and permissions to create tunnels and DNS records.
 - `cloudflared` credentials (named tunnel) to be stored here.
 
-## Steps
+### Running Locally
+
 1. Authenticate cloudflared (once on the host):
+
+   ```bash
    cloudflared login
+   ```
 
 2. Create a named tunnel:
+
+   ```bash
    cloudflared tunnel create monorepo-services
-   # Note the TUNNEL_ID printed and a credentials JSON created locally.
+   ```
+
+   Note the `TUNNEL_ID` printed and the credentials JSON created locally.
 
 3. Move the credentials file into this folder and rename it to `<TUNNEL_ID>.json`.
 
@@ -33,23 +53,34 @@ This folder contains Cloudflare Tunnel configuration to expose your local Docker
 
 5. Create DNS routes (one-time) for each hostname (any of the following):
    - Via CLI:
+
+     ```bash
      cloudflared tunnel route dns monorepo-services electoral-api.seudominio.com
      cloudflared tunnel route dns monorepo-services joystick-api.seudominio.com
      cloudflared tunnel route dns monorepo-services rgbwallet-api.seudominio.com
      cloudflared tunnel route dns monorepo-services secret-santa-api.seudominio.com
+     ```
+
    - Or add CNAMEs in Cloudflare dashboard pointing to the tunnel domain.
 
 6. Start your stack:
+
+   ```bash
    docker compose up -d --build
+   ```
 
 7. Run the tunnel container:
+
+   ```bash
    docker compose up -d cloudflared
+   ```
 
 8. Test:
-   - curl https://electoral-api.seudominio.com/health
-   - curl https://secret-santa-api.seudominio.com/
+   - `curl https://electoral-api.seudominio.com/health`
+   - `curl https://secret-santa-api.seudominio.com/`
 
-## Notes
+## Known Limitations
+
 - The compose file binds service ports to 127.0.0.1 only; they are not publicly reachable.
 - Adjust service names and ports if you change Dockerfiles or app ports.
 - For production, enable Cloudflare Access for the hostnames and enforce auth.

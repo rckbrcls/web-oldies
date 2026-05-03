@@ -7,26 +7,26 @@ A historical archive of older web-development projects. The repository preserves
 
 ## Summary
 
-- [What it is](#what-it-is)
-- [Goals](#goals)
-- [Project map](#project-map)
-- [Current state](#current-state)
-- [Working notes](#working-notes)
+- Archived collection of older web-development projects, kept as a learning timeline and portfolio reference.
+- Contains independent frontend and backend experiments rather than one active product.
+- Main themes include ecommerce, election data, game-store/cart flows, RGB wallet/admin flows, Secret Santa tooling, video project management, Cloudflare tunnel configuration, React, Solid, Express, Flask, MongoDB, PostgreSQL, Docker, Webpack, and Vite.
+- Current status: archived; dependencies, setup assumptions, and deployment targets may be outdated.
+- Technical value: preserves early full-stack patterns and makes growth over time visible without mixing these projects with current production-quality repositories.
 
-## What it is
+## Overview
 
 `web-oldies` is not one active product. It is a collection of small projects built while learning different parts of web development: storefronts, simple APIs, authentication flows, database scripts, dashboards, and UI experiments.
 
 The value of this repository is historical. It shows how ideas, stacks, and implementation habits evolved over time.
 
-## Goals
+## Motivation
 
 - Keep older projects available without presenting them as maintained production systems.
 - Preserve examples of early React, Solid, Express, Flask, SQL, Docker, and deployment work.
 - Make it easy to browse the archive by area instead of guessing from folder names.
 - Avoid mixing these learning artifacts with current product-quality projects.
 
-## Project map
+## Project Structure
 
 ```text
 web-oldies/
@@ -36,11 +36,11 @@ web-oldies/
 
 Notable project themes include election systems, ecommerce flows, RGB wallet experiments, secret-santa tooling, joystick/game-store ideas, and video project management.
 
-## Current state
+## Current Status
 
 These projects are old and are not actively maintained. Some dependencies, generated artifacts, or environment assumptions may be outdated. Treat the code as reference material, not as the current standard for architecture, security, UI, or testing.
 
-## Working notes
+## Known Limitations
 
 - Read each subfolder as an independent learning artifact.
 - Expect duplicated setup patterns because the repository spans different learning phases.

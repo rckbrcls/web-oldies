@@ -3,6 +3,14 @@
 > **Status:** Archived
 > This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
 
+## Summary
+
+- Archived React frontend for the SCC0219 online game-store coursework project, branded in the old document as Pleisteixu.
+- Solves the client/admin UI for sign up, sign in, game browsing, game/admin management, cart, checkout, profile editing, and recommendation ideas.
+- Main stack: React, JavaScript/TypeScript dependencies, Bootstrap/React Bootstrap, Axios, React Router-era patterns, and a matching Node/MongoDB backend.
+- Current status: archived coursework artifact; setup instructions and external links may need verification before reuse.
+- Technical value: preserves the original requirements, team context, test notes, and build procedure for an early full-stack web assignment.
+
 Project developed for the course SCC0219 - Introduction to Web Development (2022)
 
 The subject chosen to develop the website is online games, similar to platforms like Steam and Nuuvem.
@@ -34,7 +42,7 @@ Pleisteixu is an online store who sells digital games. Implemented with HTML, CS
 Navigation Diagram:
 ![Diagrama](https://github.com/brcls/web-project/blob/main/mockup/Blank%20diagram%20(3).png)
 
-## Functionalities
+## Features
 
 The functionalities who will be presented in the website are:
 * Sign Up  and Sign In with email and password;
@@ -44,11 +52,12 @@ The functionalities who will be presented in the website are:
 * Acces to the cart, with the possibility of remove games, check the total price and finalize purchase.
 * Extra functionality: a recommendation of games based in the genres that the user likes more.
 
-## Server
+## Architecture
+
+### Main Components
 
 The information stored on the server are:
 
-### User
 * ID (identifier of client, unique value)
 * Name
 * Email
@@ -58,7 +67,6 @@ The information stored on the server are:
 * Address
 * Mobile number
 
-### Game
 * ID (identifier of the game, unique value)
 * Name
 * Tags (text content)

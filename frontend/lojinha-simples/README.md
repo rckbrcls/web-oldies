@@ -1,33 +1,60 @@
-# React + TypeScript + Vite
+# Lojinha Simples
 
 > **Status:** Archived
-> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+> React storefront experiment kept inside the historical `web-oldies` archive.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Summary
 
-Currently, two official plugins are available:
+- Archived React storefront experiment for product browsing and checkout-like screens.
+- Solves a small ecommerce UI with product routes, cart state, login/register screens, completed order, and not-found handling.
+- Main stack: React 18, TypeScript, React Router, Redux Toolkit, React Query, Material UI, Webpack, and Vite config.
+- Current status: archived.
+- Technical value: shows early route organization, shared product cards, and Redux slices for cart/alert state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Small ecommerce frontend with product browsing, cart flow, login/register pages, and order completion screens.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Home, products, login, registration, cart, completed-order, and not-found routes.
+- Product card component.
+- Redux slices for cart and alert state.
+- React Query dependency for data-fetching flows.
+- Material UI dependency for component styling.
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- React 18
+- TypeScript
+- React Router
+- Redux Toolkit
+- React Query
+- Material UI
+- Webpack
+
+## Usage
+
+Scripts from `package.json`:
+
+- `npm run start`
+- `npm run dev`
+- `npm run build`
+- `npm run lint`
+
+## Project Structure
+
+```text
+frontend/lojinha-simples/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── store/
+│   ├── routes.tsx
+│   └── main.tsx
+├── webpack.config.cjs
+├── vite.config.ts
+└── package.json
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Lessons Learned
+
+This archived app shows an early separation of routes, shared components, and Redux slices for a simple storefront flow.

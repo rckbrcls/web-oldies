@@ -1,39 +1,58 @@
 # Electoral System Frontend
 
 > **Status:** Archived
-> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+> SolidJS frontend kept inside the historical `web-oldies` archive.
+
+## Summary
+
+- Archived SolidJS frontend for browsing and editing electoral-system data.
+- Solves the UI side of the matching Flask API, including candidates, parties, offices, judicial processes, support teams, people, and donations.
+- Main stack: SolidJS, TypeScript, Tailwind CSS, DaisyUI, Webpack, and Vite dependencies.
+- Current status: archived; active scripts use Webpack.
+- Technical value: shows typed interfaces, API-backed lists, search/filter behavior, and deletion handlers in an older frontend stack.
+
+Frontend for browsing and editing electoral-system data from the matching Flask API.
+
+## Features
+
+- Fetches candidates, parties, offices, judicial processes, support teams, people, and donations.
+- Search and filter flow for candidates.
+- Delete handlers for several domain entities.
+- Header component and typed domain interfaces.
+- Default API URL configured in `src/App.tsx`, with Vite define support for overrides.
+
+## Tech Stack
+
+- SolidJS
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- Webpack
+- Vite dependencies are present, but the active scripts use Webpack.
 
 ## Usage
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+Scripts from `package.json`:
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+- `npm run start`
+- `npm run dev`
+- `npm run build`
+- `npm run serve`
 
-```bash
-$ npm install # or pnpm install or yarn install
+## Project Structure
+
+```text
+frontend/electoral-system/
+├── src/
+│   ├── components/
+│   ├── interfaces/
+│   ├── App.tsx
+│   └── index.tsx
+├── webpack.config.cjs
+├── vite.config.ts
+└── package.json
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## License
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+MIT, as declared in `package.json`.
