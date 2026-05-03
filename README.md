@@ -1,27 +1,47 @@
 # web-oldies
 
-This repository contains a collection of my old learning projects in web development. These are projects I created during my learning journey that serve as a historical record of my growth as a developer.
+> **Status:** Archived
+> This repository is no longer actively maintained. It is kept for reference, learning, historical context, and portfolio purposes.
 
-## ⚠️ Important
+A historical archive of older web-development projects. The repository preserves early experiments with frontend apps, backend APIs, databases, and deployment setups so they can be revisited as a learning timeline.
 
-These projects are **old and not being maintained**. They were created for educational purposes and do not necessarily reflect my current development practices. Use them only as reference or historical curiosity.
+## Summary
 
-## Structure
+- [What it is](#what-it-is)
+- [Goals](#goals)
+- [Project map](#project-map)
+- [Current state](#current-state)
+- [Working notes](#working-notes)
 
-The repository is organized into:
+## What it is
 
-- **backend/**: APIs and backend services
-- **frontend/**: Frontend applications and user interfaces
+`web-oldies` is not one active product. It is a collection of small projects built while learning different parts of web development: storefronts, simple APIs, authentication flows, database scripts, dashboards, and UI experiments.
 
-## Technologies Found
+The value of this repository is historical. It shows how ideas, stacks, and implementation habits evolved over time.
 
-As you browse through the projects, you'll find a variety of technologies I used during my learning:
+## Goals
 
-- **Backend**: Python (Flask), Node.js (Express)
-- **Frontend**: React, TypeScript, JavaScript
-- **Build Tools**: Vite, Webpack
-- **Styling**: CSS, Tailwind CSS
-- **Deployment**: Docker, Vercel
-- **Database**: SQL (DDL/DML scripts)
+- Keep older projects available without presenting them as maintained production systems.
+- Preserve examples of early React, Solid, Express, Flask, SQL, Docker, and deployment work.
+- Make it easy to browse the archive by area instead of guessing from folder names.
+- Avoid mixing these learning artifacts with current product-quality projects.
 
-Each project has its own structure and technologies, reflecting different phases of learning.
+## Project map
+
+```text
+web-oldies/
+├── backend/   # Express, Flask, SQL, Docker, and API experiments
+└── frontend/  # React, Solid, Vite, Webpack, and UI experiments
+```
+
+Notable project themes include election systems, ecommerce flows, RGB wallet experiments, secret-santa tooling, joystick/game-store ideas, and video project management.
+
+## Current state
+
+These projects are old and are not actively maintained. Some dependencies, generated artifacts, or environment assumptions may be outdated. Treat the code as reference material, not as the current standard for architecture, security, UI, or testing.
+
+## Working notes
+
+- Read each subfolder as an independent learning artifact.
+- Expect duplicated setup patterns because the repository spans different learning phases.
+- Prefer current repositories in `/Users/erickpatrickbarcelos/codes` when looking for modern conventions.

@@ -1,3 +1,8 @@
+# Alan Turing
+
+> **Status:** Archived
+> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+
 ## Usage
 
 ```bash

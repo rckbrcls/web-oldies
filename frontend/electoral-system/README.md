@@ -1,3 +1,8 @@
+# Electoral System Frontend
+
+> **Status:** Archived
+> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.

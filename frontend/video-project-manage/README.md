@@ -1,3 +1,8 @@
+# Video Project Manager
+
+> **Status:** Archived
+> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+
 ## How to Run the Project
 
 ### Step 1: Change Node.js Version

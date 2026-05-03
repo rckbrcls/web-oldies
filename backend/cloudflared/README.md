@@ -1,5 +1,8 @@
 # Cloudflare Tunnel for monorepo services
 
+> **Status:** Archived
+> This configuration is kept as part of the historical `web-oldies` archive and may need verification before reuse.
+
 This folder contains Cloudflare Tunnel configuration to expose your local Docker services securely on the Internet without exposing databases.
 
 ## Overview

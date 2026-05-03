@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+> **Status:** Archived
+> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
