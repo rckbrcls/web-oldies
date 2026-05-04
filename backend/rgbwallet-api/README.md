@@ -1,61 +1,83 @@
 # RGBWallet API
 
 > **Status:** Archived
-> Express and MongoDB backend kept inside the historical `web-oldies` archive.
+> Express and MongoDB backend for the RGBWallet experiment.
 
-## Summary
+This API pairs with `frontend/rgbwallet`. It supports login and protected administrator operations for listing, creating, editing, deleting, and updating balance data for users.
 
-- Archived Express/MongoDB API for the RGBWallet experiment.
-- Solves login and administrator user-management flows for the matching React frontend.
-- Main stack: Node.js, Express, MongoDB driver, bcryptjs, body-parser, cors, and Docker.
-- Current status: archived; the `test` script is a placeholder.
-- Technical value: preserves a compact admin/auth API with centralized Mongo connection and route/controller folders.
-
-Backend API for the RGBWallet experiment. It supports login and administrator user-management flows for the matching React frontend.
-
-## Features
-
-- Root health route.
-- Login route.
-- Auth middleware for protected administrator routes.
-- Admin user listing, creation, update, deletion, balance reset, and balance increase routes.
-- MongoDB connection layer.
-
-## Tech Stack
+## Stack
 
 - Node.js
 - Express
-- MongoDB driver
+- MongoDB native driver
 - bcryptjs
 - body-parser
 - cors
+- Dockerfile for containerized execution
 
-## Getting Started
-
-Use `.env.example` as the environment reference before starting the API. The package includes `package-lock.json`, so npm is the documented package-manager baseline for this archived project.
-
-## Usage
-
-Scripts from `package.json`:
-
-- `npm start`
-
-The `test` script is the default placeholder and does not run a real test suite.
-
-## Project Structure
+## Main Files
 
 ```text
 backend/rgbwallet-api/
-├── src/
-│   ├── connections/
-│   ├── controllers/
-│   ├── middleaware/
-│   ├── routers/
-│   └── index.js
-├── Dockerfile
-└── package.json
+|-- src/
+|   |-- connections/
+|   |-- controllers/
+|   |-- middleaware/
+|   |-- routers/
+|   `-- index.js
+|-- Dockerfile
+|-- package-lock.json
+`-- package.json
 ```
 
-## License
+## Environment
 
-ISC, as declared in `package.json`.
+Use `.env.example` as the reference:
+
+```env
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/rgbwallet
+MONGODB_DB=rgbwallet
+```
+
+`src/connections/database.js` requires `MONGODB_URI` at runtime.
+
+## Scripts
+
+From `package.json`:
+
+| Script | Command |
+| --- | --- |
+| `start` | `node src/index.js` |
+| `test` | Placeholder script that exits with an error |
+
+## API Surface
+
+Routes are defined in `src/routers/router.js`:
+
+- `GET /`
+- `POST /`
+- `GET /admin`
+- `DELETE /admin`
+- `PUT /admin/user`
+- `PUT /admin/zerarsaldo`
+- `PUT /admin/aumentarsaldo`
+- `POST /admin/new`
+
+Protected routes use middleware from `src/middleaware/auth.js`.
+
+See `docs/api.md` at the repository root for endpoint details.
+
+## Data Store
+
+Controller code uses the `RGBWallet` database and `Usuarios` collection. No formal schema or migration system was identified.
+
+Observed fields include `name`, `userName`, `passwd`, `month`, `running`, `week`, `admin`, and `saldo`.
+
+## Known Limitations
+
+- CORS is permissive.
+- Admin operations are exposed as broad controller actions.
+- The project uses the older `mongodb` driver API style.
+- No real test suite was identified.
+- The folder name `middleaware` is preserved from the archived code.

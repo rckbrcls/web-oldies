@@ -1,57 +1,74 @@
 # RGBWallet Frontend
 
 > **Status:** Archived
-> React frontend kept inside the historical `web-oldies` archive.
+> React frontend for the RGBWallet experiment.
 
-## Summary
+This frontend pairs with `backend/rgbwallet-api`. It provides login, protected administrator screens, user listing, user creation, and user editing flows.
 
-- Archived React frontend for the RGBWallet experiment.
-- Solves login, protected administrator pages, user listing, create-user, and edit-user screens backed by `backend/rgbwallet-api`.
-- Main stack: React 17, Create React App/react-scripts, React Router 5, Bootstrap, React Bootstrap, Axios, and CSS modules.
-- Current status: archived.
-- Technical value: preserves a small admin UI with `PrivateRoute` and centralized API service calls.
+## Responsibilities
 
-Frontend for the RGBWallet experiment. It pairs with `backend/rgbwallet-api` and provides login, administrator, user, create-user, and edit-user screens.
+- Render login and protected admin routes.
+- Store login state in browser storage.
+- List users through the RGBWallet API.
+- Create and edit user records.
+- Trigger balance reset and balance increase actions.
+- Centralize API calls in `src/services/api.js`.
 
-## Features
-
-- Login route.
-- Admin dashboard route.
-- User route.
-- Protected admin routes for creating and editing users.
-- API client wrapper in `src/services/api.js`.
-- Bootstrap-based UI dependencies.
-
-## Tech Stack
+## Stack
 
 - React 17
 - Create React App / react-scripts
 - React Router 5
-- Bootstrap / React Bootstrap
 - Axios
+- Bootstrap and React Bootstrap
 - CSS modules
 
-## Usage
+## Environment
 
-Scripts from `package.json`:
+Use `.env.example` as the reference:
 
-- `npm start`
-- `npm run build`
-- `npm test`
-- `npm run eject`
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+`src/services/api.js` falls back to `https://rgbwallet-api.erickbarcelos.com` when no API URL is provided.
+
+## Scripts
+
+From `package.json`:
+
+| Script | Command |
+| --- | --- |
+| `start` | `react-scripts start` |
+| `build` | `react-scripts build` |
+| `test` | `react-scripts test` |
+| `eject` | `react-scripts eject` |
 
 ## Project Structure
 
 ```text
 frontend/rgbwallet/
-├── src/
-│   ├── pages/
-│   ├── services/
-│   ├── routes.js
-│   └── App.js
-└── package.json
+|-- public/
+|-- src/
+|   |-- assets/
+|   |-- pages/
+|   |-- services/
+|   |-- App.js
+|   `-- routes.js
+|-- build/
+`-- package.json
 ```
 
-## Architecture
+## API Dependency
 
-The app uses React Router 5 and a small `PrivateRoute` wrapper. API calls are centralized in `src/services/api.js`, while page-level code lives under `src/pages/`.
+The expected backend is `backend/rgbwallet-api`.
+
+## Deployment Surface
+
+`vercel.json` is present as historical deployment configuration. The repository also contains tracked CRA `build/` output.
+
+## Known Limitations
+
+- The frontend uses Create React App while other archive projects use Webpack directly.
+- Public API fallback URLs may be stale.
+- Auth behavior is tied to archived browser-storage and backend middleware patterns.

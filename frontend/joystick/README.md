@@ -1,106 +1,90 @@
-# WEB Project
+# Joystick Frontend
 
 > **Status:** Archived
-> This frontend is kept as part of the historical `web-oldies` archive and may need dependency and setup verification.
+> React frontend for the Joystick game-store experiment.
 
-## Summary
+This frontend pairs with `backend/joystick-api`. It originated as a web coursework project for an online game store and includes customer flows, administrator screens, cart behavior, library behavior, profile editing, and checkout screens.
 
-- Archived React frontend for the SCC0219 online game-store coursework project, branded in the old document as Pleisteixu.
-- Solves the client/admin UI for sign up, sign in, game browsing, game/admin management, cart, checkout, profile editing, and recommendation ideas.
-- Main stack: React, JavaScript/TypeScript dependencies, Bootstrap/React Bootstrap, Axios, React Router-era patterns, and a matching Node/MongoDB backend.
-- Current status: archived coursework artifact; setup instructions and external links may need verification before reuse.
-- Technical value: preserves the original requirements, team context, test notes, and build procedure for an early full-stack web assignment.
+## Responsibilities
 
-Project developed for the course SCC0219 - Introduction to Web Development (2022)
+- Render public game browsing and detail pages.
+- Provide login and sign-up routes.
+- Protect profile, cart, and library pages with `RequireAuth`.
+- Support cart and checkout flows.
+- Provide administrator pages for creating, listing, and editing games.
+- Centralize API calls in `src/services/api.js`.
 
-The subject chosen to develop the website is online games, similar to platforms like Steam and Nuuvem.
+## Stack
 
-Members:
+- React 18
+- React Router 6
+- Axios
+- Bootstrap and React Bootstrap
+- styled-components
+- Webpack
 
-* Alexandre Brito | NUSP: 11857323
-* Alexandre Lima  | NUSP: 11797038
-* Erick Barcelos  | NUSP: 11345562
+## Environment
 
-# 1 - Requirements
+Use `.env.example` as the reference:
 
-The system must have 2 types of users: clients and administrators.
+```env
+VITE_API_URL=http://localhost:3000
+```
 
-Clients are those who buy the games. They are registered with CPF, name, e-mail and mobile number.
+`src/services/api.js` falls back to `https://joystick-api.erickbarcelos.com` when no API URL is provided.
 
-Administrators are responsible for registering and managing other administrators and games. The application comes by default with an admin user and admin password. Each administrator has also CPF, name, e-mail and mobile number, like the client.
+## Scripts
 
-About sales, the games are selected, included in the cart. A sale can be made using a credit card number (any number is acepted in the system). The cart is only emptied when the payment is made or when the client removes all the games.
+From `package.json`:
 
-Each game has name, ID, one photo, price, description and tags. Only the administrators can create, update, and delete games.
+| Script | Command |
+| --- | --- |
+| `dev` | `webpack serve --config webpack.config.cjs --mode development` |
+| `build` | `webpack --config webpack.config.cjs --mode production` |
 
-The system must be responsive and aims at good accessibility and usability for its users.
+## Main Routes
 
-# 2 - Project Description
+Routes are defined in `src/routes.js`:
 
-Pleisteixu is an online store who sells digital games. Implemented with HTML, CSS, JavaScript, React (with styled components), MongoDB and Node.
+- `/`
+- `/login`
+- `/cadastro`
+- `/explorar`
+- `/detalhe-jogo/:idJogo`
+- `/cadastrar-jogo`
+- `/lista-de-jogos`
+- `/editar-jogo/:id`
+- `/finalizar-compra`
+- `/perfil`
+- `/carrinho`
+- `/biblioteca`
 
-Navigation Diagram:
-![Diagrama](https://github.com/brcls/web-project/blob/main/mockup/Blank%20diagram%20(3).png)
+## Project Structure
 
-## Features
+```text
+frontend/joystick/
+|-- mockup/
+|-- old/
+|-- public/
+|-- src/
+|   |-- assets/
+|   |-- components/
+|   |-- pages/
+|   |-- providers/
+|   |-- services/
+|   |-- App.js
+|   `-- routes.js
+|-- webpack.config.cjs
+`-- package.json
+```
 
-The functionalities who will be presented in the website are:
-* Sign Up  and Sign In with email and password;
-* Viewing customer information, with the possibility of changing the registration;
-* Access to the homepage, with viewing of some games selected by the store;
-* Viewing the administrator's page, with the possibility of manage the games and users of the store;
-* Acces to the cart, with the possibility of remove games, check the total price and finalize purchase.
-* Extra functionality: a recommendation of games based in the genres that the user likes more.
+## Deployment Surface
 
-## Architecture
+`vercel.json` is present as historical deployment configuration. The repository also contains tracked `dist/` output.
 
-### Main Components
+## Known Limitations
 
-The information stored on the server are:
-
-* ID (identifier of client, unique value)
-* Name
-* Email
-* Password
-* Admin(boolean)
-* CPF
-* Address
-* Mobile number
-
-* ID (identifier of the game, unique value)
-* Name
-* Tags (text content)
-* Price
-* Description
-* Image's identifier
-
-# 3 - Comments About the Code
-There are no many comments, just in some specific points like why we decided to use something or explaining the meaning of something.
-
-# 4 - Test Plan
-We tested in different browsers like Microsoft Edge, Google Chrome and Mozilla Firefox, with different types of interactions, based on a CRUD model.
-
-# 5 - Test Results
-The results were very positive and fast.
-
-
-# 6 - Build Procedures
-To run this code, you need to have npm and node.js installed. You can also follow these steps:
-* 1 - Download these repository (`git clone repoURL`)
-* 2 - Enter in the server folder (`cd server`)
-* 4 - Run `npm install`
-* 5 - Run `npm start`
-* 6 - Enter in the client folder now (first (`cd ..`) then (`cd client`)
-* 7 - Run `npm install`
-* 9 - Run `npm start`
-
-# 7 - Problems
-We had some difficulty in the authentication part of the development, and also because of the short time to do the project.
-
-# 8 - Comments
-The project was big challenge for us, but we did it.
-
-
-# 9 - Figma
-Here is the link of the figma.
-https://www.figma.com/file/4mHWq88bqFJFVKInC4gg2s/Projeto-WEB?node-id=0%3A1
+- No automated test script was identified.
+- Some route comments and historical coursework context remain in the archived code.
+- Admin route protection depends on frontend routing and backend token behavior.
+- Public API fallback URLs may be stale.

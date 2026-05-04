@@ -1,58 +1,74 @@
 # Electoral System Frontend
 
 > **Status:** Archived
-> SolidJS frontend kept inside the historical `web-oldies` archive.
+> SolidJS frontend for the Electoral System experiment.
 
-## Summary
+This frontend pairs with `backend/electoral-system-api`. It fetches electoral-domain data, displays lists and filters, and calls delete or database utility endpoints from the Flask API.
 
-- Archived SolidJS frontend for browsing and editing electoral-system data.
-- Solves the UI side of the matching Flask API, including candidates, parties, offices, judicial processes, support teams, people, and donations.
-- Main stack: SolidJS, TypeScript, Tailwind CSS, DaisyUI, Webpack, and Vite dependencies.
-- Current status: archived; active scripts use Webpack.
-- Technical value: shows typed interfaces, API-backed lists, search/filter behavior, and deletion handlers in an older frontend stack.
+## Responsibilities
 
-Frontend for browsing and editing electoral-system data from the matching Flask API.
+- Fetch candidates, parties, offices, people, judicial processes, support teams, and donations.
+- Filter and search candidate data.
+- Delete records through API calls.
+- Trigger database cleanup and seed actions through the header component.
+- Keep domain TypeScript interfaces in `src/interfaces/Interfaces.ts`.
 
-## Features
-
-- Fetches candidates, parties, offices, judicial processes, support teams, people, and donations.
-- Search and filter flow for candidates.
-- Delete handlers for several domain entities.
-- Header component and typed domain interfaces.
-- Default API URL configured in `src/App.tsx`, with Vite define support for overrides.
-
-## Tech Stack
+## Stack
 
 - SolidJS
 - TypeScript
 - Tailwind CSS
 - DaisyUI
 - Webpack
-- Vite dependencies are present, but the active scripts use Webpack.
+- Vite configuration is present, but package scripts use Webpack for development and build.
 
-## Usage
+## Environment
 
-Scripts from `package.json`:
+Use `.env.example` as the reference:
 
-- `npm run start`
-- `npm run dev`
-- `npm run build`
-- `npm run serve`
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+`src/App.tsx` falls back to `https://electoral-api.erickbarcelos.com` when no build-time API URL is provided.
+
+## Scripts
+
+From `package.json`:
+
+| Script | Command |
+| --- | --- |
+| `start` | `webpack serve --config webpack.config.cjs --mode development` |
+| `dev` | `webpack serve --config webpack.config.cjs --mode development` |
+| `build` | `webpack --config webpack.config.cjs --mode production` |
+| `serve` | `vite preview` |
 
 ## Project Structure
 
 ```text
 frontend/electoral-system/
-├── src/
-│   ├── components/
-│   ├── interfaces/
-│   ├── App.tsx
-│   └── index.tsx
-├── webpack.config.cjs
-├── vite.config.ts
-└── package.json
+|-- src/
+|   |-- components/
+|   |-- interfaces/
+|   |-- App.tsx
+|   `-- index.tsx
+|-- index.html
+|-- tailwind.config.js
+|-- vite.config.ts
+|-- webpack.config.cjs
+`-- package.json
 ```
 
-## License
+## API Dependency
 
-MIT, as declared in `package.json`.
+Primary API calls are in `src/App.tsx` and `src/components/Header.tsx`. The expected backend is `backend/electoral-system-api`.
+
+## Deployment Surface
+
+`vercel.json` is present as historical deployment configuration.
+
+## Known Limitations
+
+- No automated tests were identified.
+- Delete and database utility actions rely on an API with no identified authentication layer.
+- Active scripts use Webpack even though Vite files are present.

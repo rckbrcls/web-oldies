@@ -1,30 +1,19 @@
 # Video Project Manager
 
 > **Status:** Archived
-> React frontend kept inside the historical `web-oldies` archive.
+> React CRUD frontend experiment kept inside the historical `web-oldies` archive.
 
-## Summary
+This frontend manages client and video-project screens. No matching backend was identified in the repository; development behavior uses MirageJS mocks when enabled by environment or development mode.
 
-- Archived React frontend experiment for managing clients and video projects.
-- Solves CRUD-style pages for clients and videos with login, mock server behavior, routes, reusable forms, and Redux state.
-- Main stack: React 18, React Router 6, Redux Toolkit, MirageJS, Axios, styled-components, Webpack, and remaining react-scripts dependencies.
-- Current status: archived.
-- Technical value: captures an early CRUD frontend with route-level pages, MirageJS mocks, and shared service code.
+## Responsibilities
 
-Frontend experiment for managing clients and video projects.
+- Render login, home, client, video, edit, create, and not-found pages.
+- Provide reusable form and list components for clients and videos.
+- Use Redux Toolkit for local state.
+- Start MirageJS mock behavior in development or when `REACT_APP_USE_MOCKS=true`.
+- Centralize API calls in `src/services/api.js`.
 
-## Features
-
-- Login page.
-- Home page.
-- Client registration, listing, and editing pages.
-- Video registration and editing pages.
-- Not-found page.
-- Redux store.
-- MirageJS mock server.
-- API service wrapper.
-
-## Tech Stack
+## Stack
 
 - React 18
 - React Router 6
@@ -33,32 +22,60 @@ Frontend experiment for managing clients and video projects.
 - Axios
 - styled-components
 - Webpack
-- react-scripts dependencies remain in the archived package.
+- react-scripts dependencies remain in the archived package
 
-## Usage
+## Environment
 
-Scripts from `package.json`:
+Use `.env.example` as the reference:
 
-- `npm run dev`
-- `npm run build`
-- `npm test`
-- `npm run eject`
+```env
+REACT_APP_USE_MOCKS=true
+```
+
+`src/App.js` starts the MirageJS server when `NODE_ENV === "development"` or `REACT_APP_USE_MOCKS === "true"`.
+
+## Scripts
+
+From `package.json`:
+
+| Script | Command |
+| --- | --- |
+| `dev` | `webpack serve --config webpack.config.cjs --mode development` |
+| `build` | `webpack --config webpack.config.cjs --mode production` |
+| `test` | `react-scripts test` |
+| `eject` | `react-scripts eject` |
 
 ## Project Structure
 
 ```text
 frontend/video-project-manage/
-├── src/
-│   ├── app/
-│   ├── components/
-│   ├── mirage/
-│   ├── pages/
-│   ├── routes.js
-│   └── services/
-├── webpack.config.cjs
-└── package.json
+|-- mock/
+|-- public/
+|-- src/
+|   |-- app/
+|   |-- components/
+|   |-- features/
+|   |-- mirage/
+|   |-- pages/
+|   |-- services/
+|   |-- App.js
+|   `-- routes.js
+|-- webpack.config.cjs
+`-- package.json
 ```
 
-## Lessons Learned
+## Development Notes
 
-This archived app captures an early CRUD-style frontend with mock data, route-level pages, reusable forms, and Redux state.
+- `commitlint.config.js` and Commitizen config are present.
+- `.husky/` exists in the project folder.
+- `mock/db.json` provides archived mock data.
+
+## Deployment Surface
+
+`vercel.json` is present as historical deployment configuration. The repository also contains tracked `dist/` output.
+
+## Known Limitations
+
+- No real backend was identified.
+- MirageJS behavior is development/mock oriented.
+- The package mixes Webpack scripts with remaining `react-scripts` dependencies.
